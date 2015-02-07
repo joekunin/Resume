@@ -1,552 +1,1160 @@
-<!doctype html>
-<html>
-	<head>
-	
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
-	
-	<title>Joe Kunin</title>
-	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
-	
-	<style type="text/css">
-	@import url(
-	https://fonts.googleapis.com/css?family=Lato:400,700
-);
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Joe Kunin</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <style>
+      .clear-margin {
+  margin: 0;
+}
+.space-top {
+  margin-top: 10px;
+}
+.space-right {
+  margin-right: 10px;
+}
+.icon-left {
+  margin-right: 5px;
+}
+.icon-right {
+  margin-left: 5px;
+}
+.labels {
+  word-spacing: 5px;
+  line-height: 2;
+}
+.label-keyword {
+  display: inline-block;
+  background: #7eb0db;
+  color: white;
+  font-size: 0.9em;
+  padding: 5px;
+  border: 1px solid #357ebd;
+}
+.link-disguise {
+  color: inherit;
+}
+.link-disguise:hover {
+  color: inherit;
+}
+@media (max-width: 992px) {
+  .clear-margin-sm {
+    margin-bottom: 0;
+  }
+}
 body {
-	background: #fff;
-	font-family: Lato, sans-serif;
-	margin: 0 0 80px;
+  font-family: 'Lato';
+  background: #f0f0f0;
+  color: #333333;
 }
-a {
-	color: #2ecc71;
+.main {
+  padding: 5px;
 }
-a:focus,
-a:hover {
-	color: #f1c40f;
-	text-decoration: none;
+.card {
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  min-height: 300px;
+  padding: 10px;
 }
-p {
-	line-height: 1.5;
-	margin: 0;
+.card-nested {
+  min-height: 0;
+  margin-bottom: 10px;
+  border-width: 1px 0 0 0;
 }
-p + p {
-	margin-top: 10px;
+.card-nested:before,
+.card-nested:after {
+  content: " ";
+  display: table;
 }
-h1,
-h2,
-h3,
-h4 {
-	margin-top: 0
-}
-section {
-	margin-top: 30px;
-}
-li {
-	line-height: 1.8;
-	list-style: none;
-}
-li:before {
-	content: "\f052";
-	float: left;
-	font: 13px Octicons;
-	margin-top: 6px;
-	margin-left: -20px;
-	opacity: .1;
-	position: absolute;
-}
-blockquote {
-	border-left: 5px solid #e7e9ec;
-	font-size: 14px;
-}
-em {
-	color: #95a5a6;
-	font-weight: normal;
-	font-style: normal;
-}
-h4 span:first-child {
-	color: #000;
-	font-weight: bold;
-}
-.container {
-	max-width: 750px;
-	padding: 0 30px;
-}
-.col-sm-6 {
-	margin-bottom: 10px;
-}
-.col-sm-12 h4 {
-	margin-top: 12px; 
-}
-.col-sm-12 + .col-sm-12 {
-	margin-top: 30px;
-}
-#header {
-	background: #f4f6f6;
-	padding: 50px 0;
-	margin-bottom: 30px;
-}
-#header h2 {
-	color: #95a5a6;
-	font-size: 24px;
-}
-#content h3 {
-	color: #f1c40f;
-	font-size: 26px;
-	margin-top: -4px;
-}
-#content aside {
-	text-align: right;
-	padding-right: 30px;
-}
-#profiles .network {
-	text-transform: capitalize;
-}
-#work .position,
-#volunteer .position {
-	font-weight: bold;
-	margin-bottom: 8px;
-}
-#education .area {
-	font-weight: bold;
-}
-#education .area:before {
-	content: "\f0d7";
-	font: 16px Octicons;
-	margin-right: 6px;
-}
-#education .studyType {
-	margin-left: 25px;
-}
-#awards .summary,
-#publications .summary {
-	margin-top: 8px;
-}
-#publications .website a:before {
-	content: attr(href);
-}
-
-@media (min-width: 480px) {
-	.strike-through {
-		border-top: 1px solid #f4f6f6;
-		height: 20px;
-		margin-top: 12px;
-		margin-bottom: -2px;
-		position: relative;
-	}
-	.strike-through span,
-	.strike-through a {
-		background: #fff;
-		position: absolute;
-	}
-	.strike-through span:first-child {
-		padding-right: 20px;
-		margin-top: -12px;
-	}
-	.strike-through span + span {
-		font-size: 14px;
-		margin-top: -10px;
-		padding-left: 20px;
-		right: 0;
-	}
-}
-@media (max-width: 768px) {
-	.col-sm-6:last-child {
-		margin-bottom: 0px;
-	}
-	#content aside {
-		margin-bottom: 20px;
-		padding-right: 0;
-		text-align: left;
-	}
-	#publications .website a:before {
-		content: "View publication";
-	}
+.card-nested:after {
+  clear: both;
 }
 @media (max-width: 480px) {
-	h1 {
-		font-size: 26px;
-	}
-	.date {
-		font-size: 14px;
-		margin-bottom: 5px;
-	}
-	.strike-through span:first-child {
-		margin-bottom: 7px;
-	}
-	.strike-through span {
-		display: block;
-	}	
-	#header {
-		margin-bottom: 10px;
-		padding: 40px 0;
-	}
-	#actions {
-		display: none;
-	}
+  .card-nested {
+    padding: 5px 0;
+  }
+}
+.background-card {
+  padding: 10px 20px;
+}
+.card-wrapper {
+  padding: 5px;
+}
+@media (max-width: 992px) {
+  .card-wrapper {
+    float: none !important;
+  }
+}
+.text-bolder {
+  font-weight: bold;
+}
+.background-details .detail {
+  display: table;
+  padding: 10px 0;
+}
+.background-details .detail .icon {
+  min-width: 45px;
+  max-width: 45px;
+  text-align: center;
+}
+.background-details .detail .info {
+  width: 100%;
+}
+.background-details .detail .title,
+.background-details .detail .icon {
+  color: #707070;
+}
+.background-details .detail .mobile-title {
+  display: none;
+}
+@media (max-width: 480px) {
+  .background-details .detail .mobile-title {
+    display: inline-block;
+    margin-left: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+}
+.background-details .detail .icon,
+.background-details .detail .info {
+  display: table-cell;
+  padding: 0 10px;
+}
+@media (max-width: 480px) {
+  .background-details .detail {
+    display: block;
+  }
+  .background-details .detail .icon {
+    max-width: inherit;
+    min-width: inherit;
+    text-align: left;
+  }
+  .background-details .detail .icon,
+  .background-details .detail .info {
+    display: block;
+    padding: 10px 0;
+  }
+  .background-details .detail .title {
+    display: none;
+  }
+}
+.info .content.has-sidebar {
+  width: 80%;
+  box-sizing: border-box;
+  float: left;
+  padding: 0 10px;
+  border-right: 1px solid #cdcdcd;
+}
+@media (max-width: 992px) {
+  .info .content.has-sidebar {
+    width: 100%;
+    border-right: 0;
+  }
+}
+@media (max-width: 480px) {
+  .info .content.has-sidebar {
+    padding: 0 2px;
+  }
+}
+.info .sidebar {
+  margin-left: 80%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+@media (max-width: 480px) {
+  ul {
+    padding-left: 25px;
+  }
+}
+/*
+    Credits: http://codyhouse.co/demo/smart-fixed-navigation/index.html
+*/
+.floating-nav-trigger {
+  width: 50px;
+  height: 50px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+  -webkit-transition: background-color 0.5s ease;
+  -o-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+  display: block;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 10px;
+  background-color: white;
+  font-size: 1.5em;
+  color: #357ebd;
+  z-index: 100;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+.floating-nav-trigger .close-icon {
+  display: none;
+}
+.floating-nav-trigger:hover {
+  color: #1f496e;
+  background-color: #e6e6e6;
+  text-decoration: none;
+}
+.floating-nav-trigger.is-open {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.floating-nav-trigger.is-open .close-icon {
+  display: inherit;
+}
+.floating-nav-trigger.is-open .fa-bars {
+  display: none;
+}
+.floating-nav-trigger.is-open:hover {
+  background-color: white;
+}
+.floating-nav {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+  -webkit-transition: transform 0.3s, visibility 0s 0.3s;
+  -o-transition: transform 0.3s, visibility 0s 0.3s;
+  transition: transform 0.3s, visibility 0s 0.3s;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+  position: fixed;
+  z-index: 50;
+  right: 10px;
+  bottom: 10px;
+  background-color: white;
+  width: 90%;
+  max-width: 400px;
+  visibility: hidden;
+  overflow: hidden;
+}
+.floating-nav ul {
+  font-size: 1.2em;
+  margin: 0;
+}
+.floating-nav ul li {
+  border-bottom: 1px solid #eff2f6;
+}
+.floating-nav ul li a {
+  padding: 20px;
+  text-decoration: none;
+  color: #357ebd;
+  display: block;
+}
+.floating-nav ul li a:hover {
+  color: #1f496e;
+}
+.floating-nav ul li i.fa {
+  margin-right: 10px;
+}
+.floating-nav ul li:last-child {
+  border-bottom: 0;
+}
+.floating-nav.is-visible {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: transform 0.3s, visibility 0s 0s;
+  -o-transition: transform 0.3s, visibility 0s 0s;
+  transition: transform 0.3s, visibility 0s 0s;
+  visibility: visible;
+}
+@media (max-width: 992px) {
+  .profile-card-wrapper {
+    position: relative;
+  }
+}
+.profile-pic {
+  padding: 20px 0;
+}
+@media (max-width: 992px) {
+  .profile-pic {
+    padding: 10px 0;
+  }
+}
+.profile-pic img {
+  width: 100px;
+  height: 100px;
+}
+@media (max-width: 992px) {
+  .name {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .contact-details {
+    text-align: center;
+  }
+}
+.contact-details .detail {
+  display: table;
+  padding: 10px 0;
+}
+.contact-details .detail .icon {
+  padding: 0 10px;
+  color: #707070;
+}
+@media (max-width: 992px) {
+  .contact-details .detail .icon {
+    padding: 0 5px 0 0;
+  }
+}
+.contact-details .detail .info {
+  font-size: 0.8em;
+}
+.contact-details .detail .icon,
+.contact-details .detail .info {
+  display: table-cell;
+  vertical-align: middle;
+}
+@media (max-width: 768px) {
+  .contact-details .detail {
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (max-width: 992px) {
+  .contact-details .detail {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding: 10px;
+  }
+  .contact-details .detail .icon,
+  .contact-details .detail .info {
+    display: inline-block;
+  }
+}
+@media (max-width: 992px) and (min-width: 768px) {
+  .contact-details .detail {
+    float: left;
+    width: 25%;
+  }
+}
+.social-links {
+  line-height: 2.5;
+}
+.social-link {
+  margin-left: 5px;
+  min-width: 35px;
+  display: inline-block;
+}
+.social-link:first-child {
+  margin-left: 0;
+}
+.social-link:hover {
+  text-decoration: none;
+}
+.link-github {
+  color: #454545;
+}
+.link-github:hover,
+.link-github:focus {
+  text-decoration: none;
+  color: #2b2b2b;
+}
+.link-twitter {
+  color: #33ccff;
+}
+.link-twitter:hover,
+.link-twitter:focus {
+  text-decoration: none;
+  color: #00bfff;
+}
+.link-blog {
+  color: #f36f24;
+}
+.link-blog:hover,
+.link-blog:focus {
+  text-decoration: none;
+  color: #d8560c;
+}
+.link-linkedin {
+  color: #007bb6;
+}
+.link-linkedin:hover,
+.link-linkedin:focus {
+  text-decoration: none;
+  color: #005983;
+}
+.link-skype {
+  color: #12a5f4;
+}
+.link-skype:hover,
+.link-skype:focus {
+  text-decoration: none;
+  color: #0986ca;
+}
+.link-stackoverflow {
+  color: #8e8e92;
+}
+.link-stackoverflow:hover,
+.link-stackoverflow:focus {
+  text-decoration: none;
+  color: #747479;
+}
+.link-soundcloud {
+  color: #e8822d;
+}
+.link-soundcloud:hover,
+.link-soundcloud:focus {
+  text-decoration: none;
+  color: #cc6916;
+}
+.link-pinterest {
+  color: #bd091f;
+}
+.link-pinterest:hover,
+.link-pinterest:focus {
+  text-decoration: none;
+  color: #8c0717;
+}
+.link-vimeo {
+  color: #17b3e8;
+}
+.link-vimeo:hover,
+.link-vimeo:focus {
+  text-decoration: none;
+  color: #128fba;
+}
+.link-behance {
+  color: #2c98cf;
+}
+.link-behance:hover,
+.link-behance:focus {
+  text-decoration: none;
+  color: #2379a5;
+}
+.link-codepen {
+  color: #1c1c1c;
+}
+.link-codepen:hover,
+.link-codepen:focus {
+  text-decoration: none;
+  color: #020202;
+}
+.link-foursquare {
+  color: #fa4778;
+}
+.link-foursquare:hover,
+.link-foursquare:focus {
+  text-decoration: none;
+  color: #f91554;
+}
+.link-reddit {
+  color: #545454;
+}
+.link-reddit:hover,
+.link-reddit:focus {
+  text-decoration: none;
+  color: #3b3b3b;
+}
+.link-spotify {
+  color: #acd200;
+}
+.link-spotify:hover,
+.link-spotify:focus {
+  text-decoration: none;
+  color: #829f00;
+}
+.link-dribbble {
+  color: #ce366f;
+}
+.link-dribbble:hover,
+.link-dribbble:focus {
+  text-decoration: none;
+  color: #a82959;
+}
+.link-facebook {
+  color: #4b6daa;
+}
+.link-facebook:hover,
+.link-facebook:focus {
+  text-decoration: none;
+  color: #3b5687;
+}
+.link-angellist {
+  color: #000000;
+}
+.link-angellist:hover,
+.link-angellist:focus {
+  text-decoration: none;
+  color: #000000;
+}
+.link-bitbucket {
+  color: #205081;
+}
+.link-bitbucket:hover,
+.link-bitbucket:focus {
+  text-decoration: none;
+  color: #163758;
+}
+.card-skills {
+  position: relative;
+}
+.skill-level {
+  border-radius: 3px;
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 0;
+  width: 10px;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2);
+}
+.skill-level .skill-progress {
+  position: absolute;
+  border-radius: 3px;
+  bottom: 0;
+  width: 100%;
+  -webkit-transition: height 1s ease;
+}
+.skill-level .skill-progress.beginner {
+  height: 50%;
+  background: #e74c3c;
+}
+.skill-level .skill-progress.intermediate {
+  height: 70%;
+  background: #f1c40f;
+}
+.skill-level .skill-progress.advanced {
+  height: 80%;
+  background: #428bca;
+}
+.skill-level .skill-progress.master {
+  height: 95%;
+  background: #5cb85c;
+}
+.skill-info {
+  margin-left: 10px;
+}
+@media (max-width: 480px) {
+  .skill-info {
+    margin-left: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .quote {
+    font-size: inherit;
+  }
+}
+@media print {
+  a[href]:after {
+    content: none !important;
+  }
+  .profile-card {
+    text-align: center;
+  }
+  .profile-pic {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .profile-pic img {
+    border-radius: 0;
+  }
+  .name-and-profession {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 15px;
+  }
+  .contact-details .detail {
+    position: relative;
+    float: left;
+    width: 25%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding: 0;
+  }
+  .floating-nav,
+  .floating-nav-trigger {
+    display: none;
+  }
+  .pagebreak {
+    page-break-before: always;
+  }
 }
 
-	</style>
-	
-	</head>
-	<body>
-	
-	<header id="header">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-9 col-sm-push-3">
-					<h1>
-						Joe Kunin
-					</h1>
-					<h2>
-						Developer
-					</h2>
-				</div>
-			</div>
-		</div>
-	</header>
-	<div id="content" class="container">
+    </style>
+  </head>
 
-	<section id="contact" class="row">
-		<aside class="col-sm-3">
-			<h3>Contact</h3>
-		</aside>
-		<div class="col-sm-9">
-			<div class="row">
-			<div class="col-sm-6">
-				<strong>Email</strong>
-				<div class="email">joekunin@gmail.com</div>
-			</div>
-			<div class="col-sm-6">
-				<strong>Phone</strong>
-				<div class="phone">(818) 457-1456</div>
-			</div>
-			<div class="col-sm-6">
-				<strong>Website</strong>
-				<div class="website">
-					<a href="www.joekunin.com">www.joekunin.com</a>
-				</div>
-			</div>
-			</div>
-		</div>
-	</section>
-	<section id="about" class="row">
-		<aside class="col-sm-3">
-			<h3>About</h3>
-		</aside>
-		<div class="col-sm-9">
-			<p>Facinated by technology, the processes we use to build it, and the people that use it. Striving for efficiency, progress, beauty, and deeper understanding</p>
-		</div>
-	</section>
-	<section id="profiles" class="row">
-		<aside class="col-sm-3">
-			<h3>Profiles</h3>
-		</aside>
-		<div class="col-sm-9">
-			<div class="row">
-				<div class="col-sm-6">
-					<strong class="network">
-						GitHub
-					</strong>
-					<div class="username">
-						<div class="url">
-							<a href="github.com/joekunin">joekunin</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6">
-					<strong class="network">
-						LinkedIn
-					</strong>
-					<div class="username">
-						<div class="url">
-							<a href="www.linkedin.com/in/joekunin/">joekunin</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+  <body itemscope itemtype="http://schema.org/Person">
+    <script>
+      window.onload = function () {
+        var toggleFloatingMenu = function() {
+          $( '.js-floating-nav' ).toggleClass( 'is-visible' );
+          $( '.js-floating-nav-trigger' ).toggleClass( 'is-open' );
+        };
 
-	<section id="work" class="row">
-		<aside class="col-sm-3">
-			<h3>Work</h3>
-		</aside>
-		<div class="col-sm-9">
-			<div class="row">
-			<div class="col-sm-12">
-				<h4 class="strike-through">
-					<span>Joe Kunin Development &amp; Design</span>
-					<span class="date">
-						2012-03-01 — 
-					</span>
-				</h4>
-				<div class="website pull-right">
-					<a href="http://joekunin.com">http://joekunin.com</a>
-				</div>
-				<div class="position">
-					Developer / Designer
-				</div>
-				<div class="summary">
-					<p></p>
-				</div>
-			</div>
-			<div class="col-sm-12">
-				<h4 class="strike-through">
-					<span>Alelo TLT, LLC</span>
-					<span class="date">
-						2010-10-01 — 2011-06-01
-					</span>
-				</h4>
-				<div class="website pull-right">
-					<a href="http://www.alelo.com/">http://www.alelo.com/</a>
-				</div>
-				<div class="position">
-					Production Support Specialist
-				</div>
-				<div class="summary">
-					<p>This role required considerable flexibility and a superior ability to adapt, in order to efficiently address shifting requirements, deadlines, product and company needs. Pressure from strict deadlines and budgetary requirements necessitated an efficient, productive, and self-managing work ethic as well as daily collaboration with project and product managers, department leads, and colleagues to establish and maintain an effective workflow. My Duties included effectively providing support to a variety of departments during all stages of production, quality assurance, bug tracking using a dedicated system, content development with an extensive research and revision process, graphic design, and user experience work for both client and internal applications. During my time at Alelo, I was able to successfully manage a full workload of simultaneous projects with different clients and requirements, and collaborate effectively with my colleagues to successfully complete a rich, technologically sophisticated, multimedia–driven course that was to become a flagship product.</p>
-				</div>
-			</div>
-			<div class="col-sm-12">
-				<h4 class="strike-through">
-					<span>Onsolution</span>
-					<span class="date">
-						2000-06-01 — 2010-10-01
-					</span>
-				</h4>
-				<div class="website pull-right">
-					<a href=""></a>
-				</div>
-				<div class="position">
-					Network Administrator Assistant
-				</div>
-				<div class="summary">
-					<p>I assisted with hardware repair, troubleshooting and installation of vital software, configuration of new systems, maintenance and updating of older systems, and networking. Included a high proportion of customer service. Assisted and tutored users with basic and advanced computer usage as well as software dilemmas. Extensive use of Windows and Mac systems.</p>
-				</div>
-			</div>
-			<div class="col-sm-12">
-				<h4 class="strike-through">
-					<span>Axiom Photographic</span>
-					<span class="date">
-						2009-03-03 — 2009-06-15
-					</span>
-				</h4>
-				<div class="website pull-right">
-					<a href="http://www.axiomphotographic.com/">http://www.axiomphotographic.com/</a>
-				</div>
-				<div class="position">
-					Photography Library Intern
-				</div>
-				<div class="summary">
-					<p>Intern at the premier travel photography agency in Europe and the United Kingdom. Interacted with thousands of photos in every step of the organizing and cataloging process, including editing, filing, distribution, rights management, and invoicing. increased the productivity and output of the cataloging process by devising a series of scripts to automate many tedious tasks. Observed strict submission guidelines, keywording practices, and technical requirements. I continually Interacted with clients such as Condé Nast, Getty Images, Rough Guides, and nearly every major UK–based news publication.</p>
-				</div>
-			</div>
-			<div class="col-sm-12">
-				<h4 class="strike-through">
-					<span>UC Davis Dept. of Theater and Dance</span>
-					<span class="date">
-						2007-12-01 — 2009-06-15
-					</span>
-				</h4>
-				<div class="website pull-right">
-					<a href="http://arts.ucdavis.edu/theatre-dance">http://arts.ucdavis.edu/theatre-dance</a>
-				</div>
-				<div class="position">
-					Head Publicity Photographer
-				</div>
-				<div class="summary">
-					<p>Charged with capturing publicity photos of all shows and events for marketing and archival purposes, digitally editing large sets of photos, and creating images that fit my own photographic vision, along with the publicity director’s technical requirements. Continuously challenged my photographic creativity to present a wide variety of material in an intriguing way. Other duties included shoot coordination, scheduling, collaboration with art department, and creation of “Best of” lists for publicity director and publishers.</p>
-				</div>
-			</div>
-			<div class="col-sm-12">
-				<h4 class="strike-through">
-					<span>The California Aggie</span>
-					<span class="date">
-						2007-01-15 — 2009-06-15
-					</span>
-				</h4>
-				<div class="website pull-right">
-					<a href=""></a>
-				</div>
-				<div class="position">
-					Staff Photographer
-				</div>
-				<div class="summary">
-					<p>Staff photographer for a newspaper with a circulation of 13,000 people. Fast reaction speeds, resourcefulness, and adaptability were essential for successful completion of assignments by their deadlines. Other tasks included event organization, equipment and staff management, editing of images, and workflow optimization.</p>
-				</div>
-			</div>
-			</div>
-		</div>
-	</section>
+        $( ".background-card" ).css( "min-height", window.screen.availHeight + "px" );
+        $( ".js-tooltip" ).tooltip();
+        $( '.js-floating-nav-trigger' ).on( 'click', function(e) {
+          e.preventDefault();
+          toggleFloatingMenu();
+        });
+        $( '.js-floating-nav a' ).on( 'click', toggleFloatingMenu );
+      }
+    </script>
+    <div class="container-fluid">
+      <div class="row main clearfix">
+        <a href="#" class="js-floating-nav-trigger floating-nav-trigger">
+          <i class="fa fa-bars"></i>
+          <span class="close-icon">&times;</span>
+        </a>
+        <nav class="floating-nav js-floating-nav">
+          <ul class="list-unstyled">
+            <li>
+              <a href="#about">
+                <i class="fa fa-user"></i>
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#work-experience">
+                <i class="fa fa-building"></i>
+                Work Experience
+              </a>
+            </li>
+            <li>
+              <a href="#skills">
+                <i class="fa fa-code"></i>
+                Skills
+              </a>
+            </li>
+            <li>
+              <a href="#education">
+                <i class="fa fa-mortar-board"></i>
+                Education
+              </a>
+            </li>
+              <li>
+                <a href="#awards">
+                  <i class="fa fa-trophy"></i>
+                  Awards
+                </a>
+              </li>
+              <li>
+                <a href="#references">
+                  <i class="fa fa-thumbs-up"></i>
+                  References
+                </a>
+              </li>
+          </ul>
+        </nav>
 
-	
-	<section id="education" class="row">
-		<aside class="col-sm-3">
-			<h3>Education</h3>
-		</aside>
-		<div class="col-sm-9">
-			<div class="row">
-			<div class="col-sm-12">
-				<h4 class="strike-through">
-					<span>University of California Davis</span>
-					<span class="date">
-						2005-09-01 — 2009-05-01
-					</span>
-				</h4>
-				<div class="area">
-					International Relations, German, Russian
-				</div>
-				<div class="studyType">
-					Bachelor
-				</div>
-			</div>
-			</div>
-		</div>
-	</section>
-	
-	<section id="awards" class="row">
-		<aside class="col-sm-3">
-			<h3>Awards</h3>
-		</aside>
-		<div class="col-sm-9">
-			<div class="row">
-			<div class="col-sm-12">
-				<h4 class="strike-through">
-					<span>Deans&#x27; Honor List recipient</span>
-				</h4>
-				<div class="date pull-right">
-					<em>Awarded</em>
-					2009-05-01
-				</div>
-				<div class="awarder">
-					<em>by</em>
-					<strong>University of California</strong>
-				</div>
-				<div class="summary">
-					Finished with maximum units and ranked among top 16% of class.
-				</div>
-			</div>
-			</div>
-		</div>
-	</section>
-	
-	
-	<section id="skills" class="row">
-		<aside class="col-sm-3">
-			<h3>Skills</h3>
-		</aside>
-		<div class="col-sm-9">
-			<div class="row">
-			<div class="col-sm-6">
-				<div class="name">
-					<h4>Web Development</h4>
-				</div>
-				<ul class="keywords">
-					<li>HTML</li>
-					<li>CSS</li>
-					<li>Javascript</li>
-				</ul>
-			</div>
-			<div class="col-sm-6">
-				<div class="name">
-					<h4>Compression</h4>
-				</div>
-				<ul class="keywords">
-					<li>Mpeg</li>
-					<li>MP4</li>
-					<li>GIF</li>
-				</ul>
-			</div>
-			</div>
-		</div>
-	</section>
+        <section class="col-md-3 card-wrapper profile-card-wrapper affix">
+          <div class="card profile-card">
+              <span class="profile-pic-container">
+                <div class="profile-pic">
+                  <img class="media-object img-circle center-block"  data-src="holder.js/100x100"
+                    alt="Joe Kunin" src="http://joekunin.com/me.jpg" itemprop="image">
+                </div>
 
-	<section id="languages" class="row">
-		<aside class="col-sm-3">
-			<h3>Languages</h3>
-		</aside>
-		<div class="col-sm-9">
-			<div class="row">
-			<div class="col-sm-6">
-				<div class="language">
-					<strong>English</strong>
-				</div>
-				<div class="fluency">
-					Native speaker
-				</div>
-			</div>
-			<div class="col-sm-6">
-				<div class="language">
-					<strong>Russian</strong>
-				</div>
-				<div class="fluency">
-					Native Speaker
-				</div>
-			</div>
-			<div class="col-sm-6">
-				<div class="language">
-					<strong>German</strong>
-				</div>
-				<div class="fluency">
-					Intermediate
-				</div>
-			</div>
-			</div>
-		</div>
-	</section>
+                <div class="name-and-profession">
+                  <h3 class="text-center text-bolder name" itemprop="name"> Joe Kunin</h3>
+                  <h5 class="text-muted text-center" itemprop="jobTitle">Developer</h5>
+                </div>
+              </span>
+              <hr>
 
-	<section id="interests" class="row">
-		<aside class="col-sm-3">
-			<h3>Interests</h3>
-		</aside>
-		<div class="col-sm-9">
-			<div class="row">
-			<div class="col-sm-6">
-				<div class="name">
-					<h4>Wildlife</h4>
-				</div>
-			</div>
-			</div>
-		</div>
-	</section>
-	
-	<section id="references" class="row">
-		<aside class="col-sm-3">
-			<h3>References</h3>
-		</aside>
-		<div class="col-sm-9">
-			<div class="row">
-			<div class="col-sm-12">
-				<blockquote class="reference">
-					<p>Joe has an interdisciplinary background that he leveraged to communicate effectively across the tech, media and content departments. He has inquisitive nature that lead him to find faster, more efficient ways to finish his work and has the ability to adapt to quickly and learn new skills in a fast-paced, dynamic work environment.</p>
-					<p class="name">
-						<strong>— Izett Barnett Jr. CPA - CFO at Alelo</strong>
-					</p>
-				</blockquote>
-			</div>
-			<div class="col-sm-12">
-				<blockquote class="reference">
-					<p>Joey and I worked together on very detailed project with a tight deadline. Even though he was given almost no time to ramp up, Joey knocked out all of his tasks quickly.   Joey is also a very clear communicator. When you&#x27;re working together, you&#x27;ll never wonder about the status of a project. Overall, Joey is a good guy to have on your team.</p>
-					<p class="name">
-						<strong>— Emma Schroder - Content Developer</strong>
-					</p>
-				</blockquote>
-			</div>
-			<div class="col-sm-12">
-				<blockquote class="reference">
-					<p>Joseph did a huge amount of anything-that-needs-to-be-done work for Alelo, including researching &amp; re-using open source media assets off the internet, doing UX design for a proprietary Alelo product, etc.   Joseph has shown himself to be a great addition to the Alelo Production Support &amp; Product Design teams. He is competent, friendly and easy to work with.</p>
-					<p class="name">
-						<strong>— Alex Kravets - CTO, Founder</strong>
-					</p>
-				</blockquote>
-			</div>
-			</div>
-		</div>
-	</section>
+              <div class="contact-details clearfix">
 
-	</div>
-	
-	</body>
+                  <div class="detail">
+                    <span class="icon">
+                      <i class="fa fa-lg fa-location-arrow"></i>
+                    </span>
+
+                      <span class="info">
+                        Portland, Oregon,
+                        US
+                      </span>
+                  </div>
+
+                  <div class="detail">
+                    <span class="icon">
+                      <i class="fa fa-lg fa-phone"></i>
+                    </span>
+
+                    <span class="info" itemprop="telephone">
+                      (818) 457-1456
+                    </span>
+                  </div>
+
+                  <div class="detail">
+                    <span class="icon">
+                      <i class="fa fa-lg fa-envelope"></i>
+                    </span>
+
+                    <span class="info">
+                      <a href="mailto:joekunin@gmail.com" class="link-disguise" itemprop="email">joekunin@gmail.com</a>
+                    </span>
+                  </div>
+
+                  <div class="detail">
+                    <span class="icon" title="Languages I speak">
+                      <i class="fa fa-lg fa-language"></i>
+                    </span>
+
+                    <span class="info">
+                      English, Russian, German
+                    </span>
+                  </div>
+              </div>
+
+              <hr>
+
+              <div class="social-links text-center">
+                  <a class="fa fa-linkedin fa-2x social-link link-linkedin"
+                       href="www.linkedin.com/in/joekunin/" target="_blank"></a>
+                  <a class="fa fa-github fa-2x social-link link-github"
+                       href="//github.com/joekunin" target="_blank"></a>
+                  <a class="fa fa-rss fa-2x social-link link-blog"
+                       href="www.joekunin.com" target="_blank"></a>
+              </div>
+          </div>
+        </section>
+
+        <section class="col-md-9 card-wrapper pull-right">
+          <div class="card background-card">
+            <h4 class="text-uppercase text-bolder">Background</h4>
+            <hr>
+
+            <div class="background-details">
+              <div class="detail" id="about">
+                <div class="icon">
+                  <i class="fa fa-lg fa-user"></i>
+                  <span class="mobile-title">About</span>
+                </div>
+                <div class="info">
+                  <h4 class="title text-uppercase">
+                    About
+                  </h4>
+
+                  <div class="content" itemprop="description">
+                    Fascinated by technology, the processes we use to build it, and the people that use it. Striving for efficiency, progress, beauty, and deeper understanding. Interested in automation, optimization, craftsmanship, and evolution.
+                  </div>
+                </div>
+              </div>
+
+              <div class="detail" id="work-experience">
+                <div class="icon">
+                  <i class="fa fa-lg fa-building"></i>
+                  <span class="mobile-title">Work Experience</span>
+                </div>
+                <div class="info">
+                  <h4 class="title text-uppercase">
+                    Work Experience
+                  </h4>
+
+                  <ul class="list-unstyled">
+                      <li class="card card-nested clearfix">
+                        <div class="content has-sidebar">
+                          <p class="clear-margin-sm">
+                            <strong>Developer / Designer</strong>,&nbsp;
+                              <a href="http://joekunin.com"  target="_blank">Joe Kunin Development &amp; Design</a>
+                          </p>
+                          <p class="text-muted visible-xs visible-sm">
+                            <small>
+                              <span class="space-right">
+                                Feb, 2012 -
+                                  Present
+                              </span>
+
+                                <span>
+                                  <i class="fa fa-clock-o icon-left"></i>
+                                  2 years 11 months
+                                </span>
+                            </small>
+                          </p>
+                          <p></p>
+                        </div>
+
+                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                            <p>
+                              <strong>Joined:</strong>&nbsp;
+                              Feb, 2012
+                            </p>
+
+                            <p>
+                                <span class="label label-success">
+                                  Currently Working
+                                </span>
+                            </p>
+                            <p>
+                              <i class="fa fa-clock-o icon-left"></i>
+                              2 years 11 months
+                            </p>
+                        </div>
+                      </li>
+                      <li class="card card-nested clearfix">
+                        <div class="content has-sidebar">
+                          <p class="clear-margin-sm">
+                            <strong>Production Support Specialist</strong>,&nbsp;
+                              <a href="http://www.alelo.com/"  target="_blank">Alelo TLT, LLC</a>
+                          </p>
+                          <p class="text-muted visible-xs visible-sm">
+                            <small>
+                              <span class="space-right">
+                                Sep, 2010 -
+                                  May, 2011
+                              </span>
+
+                                <span>
+                                  <i class="fa fa-clock-o icon-left"></i>
+                                  8 months
+                                </span>
+                            </small>
+                          </p>
+                          <p>This role required considerable flexibility and a superior ability to adapt, in order to efficiently address shifting requirements, deadlines, product and company needs. Pressure from strict deadlines and budgetary requirements necessitated an efficient, productive, and self-managing work ethic as well as daily collaboration with project and product managers, department leads, and colleagues to establish and maintain an effective workflow. My Duties included effectively providing support to a variety of departments during all stages of production, quality assurance, bug tracking using a dedicated system, content development with an extensive research and revision process, graphic design, and user experience work for both client and internal applications. During my time at Alelo, I was able to successfully manage a full workload of simultaneous projects with different clients and requirements, and collaborate effectively with my colleagues to successfully complete a rich, technologically sophisticated, multimedia–driven course that was to become a flagship product.</p>
+                        </div>
+
+                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                            <p>
+                              <strong>Joined:</strong>&nbsp;
+                              Sep, 2010
+                            </p>
+
+                            <p>
+                                <strong>Left:</strong>&nbsp;
+                                May, 2011
+                            </p>
+                            <p>
+                              <i class="fa fa-clock-o icon-left"></i>
+                              8 months
+                            </p>
+                        </div>
+                      </li>
+                      <li class="card card-nested clearfix">
+                        <div class="content has-sidebar">
+                          <p class="clear-margin-sm">
+                            <strong>Network Administrator Assistant</strong>,&nbsp;
+                              Onsolution
+                          </p>
+                          <p class="text-muted visible-xs visible-sm">
+                            <small>
+                              <span class="space-right">
+                                May, 2000 -
+                                  Sep, 2010
+                              </span>
+
+                                <span>
+                                  <i class="fa fa-clock-o icon-left"></i>
+                                  10 years 4 months
+                                </span>
+                            </small>
+                          </p>
+                          <p>I assisted with hardware repair, troubleshooting and installation of vital software, configuration of new systems, maintenance and updating of older systems, and networking. Included a high proportion of customer service. Assisted and tutored users with basic and advanced computer usage as well as software dilemmas. Extensive use of Windows and Mac systems.</p>
+                        </div>
+
+                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                            <p>
+                              <strong>Joined:</strong>&nbsp;
+                              May, 2000
+                            </p>
+
+                            <p>
+                                <strong>Left:</strong>&nbsp;
+                                Sep, 2010
+                            </p>
+                            <p>
+                              <i class="fa fa-clock-o icon-left"></i>
+                              10 years 4 months
+                            </p>
+                        </div>
+                      </li>
+                      <li class="card card-nested clearfix">
+                        <div class="content has-sidebar">
+                          <p class="clear-margin-sm">
+                            <strong>Photography Library Intern</strong>,&nbsp;
+                              <a href="http://www.axiomphotographic.com/"  target="_blank">Axiom Photographic</a>
+                          </p>
+                          <p class="text-muted visible-xs visible-sm">
+                            <small>
+                              <span class="space-right">
+                                Mar, 2009 -
+                                  Jun, 2009
+                              </span>
+
+                                <span>
+                                  <i class="fa fa-clock-o icon-left"></i>
+                                  3 months
+                                </span>
+                            </small>
+                          </p>
+                          <p>Intern at the premier travel photography agency in Europe and the United Kingdom. Interacted with thousands of photos in every step of the organizing and cataloging process, including editing, filing, distribution, rights management, and invoicing. increased the productivity and output of the cataloging process by devising a series of scripts to automate many tedious tasks. Observed strict submission guidelines, keywording practices, and technical requirements. I continually Interacted with clients such as Condé Nast, Getty Images, Rough Guides, and nearly every major UK–based news publication.</p>
+                        </div>
+
+                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                            <p>
+                              <strong>Joined:</strong>&nbsp;
+                              Mar, 2009
+                            </p>
+
+                            <p>
+                                <strong>Left:</strong>&nbsp;
+                                Jun, 2009
+                            </p>
+                            <p>
+                              <i class="fa fa-clock-o icon-left"></i>
+                              3 months
+                            </p>
+                        </div>
+                      </li>
+                      <li class="card card-nested clearfix">
+                        <div class="content has-sidebar">
+                          <p class="clear-margin-sm">
+                            <strong>Head Publicity Photographer</strong>,&nbsp;
+                              <a href="http://arts.ucdavis.edu/theatre-dance"  target="_blank">UC Davis Dept. of Theater and Dance</a>
+                          </p>
+                          <p class="text-muted visible-xs visible-sm">
+                            <small>
+                              <span class="space-right">
+                                Nov, 2007 -
+                                  Jun, 2009
+                              </span>
+
+                                <span>
+                                  <i class="fa fa-clock-o icon-left"></i>
+                                  1 year 6 months
+                                </span>
+                            </small>
+                          </p>
+                          <p>Charged with capturing publicity photos of all shows and events for marketing and archival purposes, digitally editing large sets of photos, and creating images that fit my own photographic vision, along with the publicity director’s technical requirements. Continuously challenged my photographic creativity to present a wide variety of material in an intriguing way. Other duties included shoot coordination, scheduling, collaboration with art department, and creation of “Best of” lists for publicity director and publishers.</p>
+                        </div>
+
+                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                            <p>
+                              <strong>Joined:</strong>&nbsp;
+                              Nov, 2007
+                            </p>
+
+                            <p>
+                                <strong>Left:</strong>&nbsp;
+                                Jun, 2009
+                            </p>
+                            <p>
+                              <i class="fa fa-clock-o icon-left"></i>
+                              1 year 6 months
+                            </p>
+                        </div>
+                      </li>
+                      <li class="card card-nested clearfix">
+                        <div class="content has-sidebar">
+                          <p class="clear-margin-sm">
+                            <strong>Staff Photographer</strong>,&nbsp;
+                              The California Aggie
+                          </p>
+                          <p class="text-muted visible-xs visible-sm">
+                            <small>
+                              <span class="space-right">
+                                Jan, 2007 -
+                                  Jun, 2009
+                              </span>
+
+                                <span>
+                                  <i class="fa fa-clock-o icon-left"></i>
+                                  2 years 5 months
+                                </span>
+                            </small>
+                          </p>
+                          <p>Staff photographer for a newspaper with a circulation of 13,000 people. Fast reaction speeds, resourcefulness, and adaptability were essential for successful completion of assignments by their deadlines. Other tasks included event organization, equipment and staff management, editing of images, and workflow optimization.</p>
+                        </div>
+
+                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                            <p>
+                              <strong>Joined:</strong>&nbsp;
+                              Jan, 2007
+                            </p>
+
+                            <p>
+                                <strong>Left:</strong>&nbsp;
+                                Jun, 2009
+                            </p>
+                            <p>
+                              <i class="fa fa-clock-o icon-left"></i>
+                              2 years 5 months
+                            </p>
+                        </div>
+                      </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="detail" id="skills">
+                <div class="icon">
+                  <i class="fa fa-lg fa-code"></i>
+                  <span class="mobile-title">Skills</span>
+                </div>
+                <div class="info">
+                  <h4 class="title text-uppercase">
+                    Skills
+                  </h4>
+
+                  <div class="content">
+                    <ul class="list-unstyled">
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="detail" id="education">
+                <div class="icon">
+                  <i class="fa fa-lg fa-mortar-board"></i>
+                  <span class="mobile-title">Education</span>
+                </div>
+                <div class="info">
+                  <h4 class="title text-uppercase">
+                    Education
+                  </h4>
+
+                  <div class="content">
+                    <ul class="list-unstyled">
+                        <li class="card card-nested">
+                          <div class="content has-sidebar">
+                            <p class="clear-margin-sm">
+                              <strong>International Relations, German, Russian, Bachelor</strong>,&nbsp;
+                              University of California Davis
+                            </p>
+                            <p class="visible-xs visible-sm text-muted">
+                              <small>
+                                Aug, 2005 -
+                                  Apr, 2009
+                              </small>
+                            </p>
+                            <i>3.7</i>
+                            <div class="space-top labels">
+                            </div>
+                          </div>
+                          <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                            <p>
+                              <strong>Started:</strong>&nbsp;
+                              Aug, 2005
+                            </p>
+                            <p>
+                                <strong>Completion:</strong>&nbsp;
+                                Apr, 2009
+                            </p>
+                          </div>
+                        </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+                <div class="detail" id="awards">
+                  <div class="icon">
+                    <i class="fa fa-lg fa-trophy"></i>
+                    <span class="mobile-title">Awards</span>
+                  </div>
+                  <div class="info">
+                    <h4 class="title text-uppercase">
+                      Awards
+                    </h4>
+
+                    <div class="content">
+                      <ul class="list-unstyled">
+                          <li class="card card-nested">
+                            <div class="content has-sidebar">
+                              <p class="clear-margin-sm" itemprop="award">
+                                <strong>Deans&#x27; Honor List recipient</strong>,&nbsp;
+                                University of California
+                              </p>
+                              <p class="visible-xs visible-sm text-muted">
+                                <small>
+                                  Awarded on: Apr 30, 2009
+                                </small>
+                              </p>
+                              <p class="clear-margin"> Finished with maximum units and ranked among top 16% of class. </p>
+                            </div>
+                            <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                              <p>
+                                <strong>Awarded on:</strong>&nbsp;
+                                Apr 30, 2009
+                              </p>
+                            </div>
+                          </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+                <div class="detail" id="references">
+                  <div class="icon">
+                    <i class="fa fa-lg fa-thumbs-up"></i>
+                    <span class="mobile-title">References</span>
+                  </div>
+                  <div class="info">
+                    <h4 class="title text-uppercase">
+                      References
+                    </h4>
+
+                    <div class="content">
+                      <ul class="list-unstyled">
+                          <li class="card card-nested">
+                            <p>
+                              <strong>Izett Barnett Jr. CPA - CFO at Alelo</strong>
+                            </p>
+                            <blockquote class="quote">
+                              <p class="clear-margin">Joe has an interdisciplinary background that he leveraged to communicate effectively across the tech, media and content departments. He has inquisitive nature that lead him to find faster, more efficient ways to finish his work and has the ability to adapt to quickly and learn new skills in a fast-paced, dynamic work environment.</p>
+                            </blockquote>
+                          </li>
+                          <li class="card card-nested">
+                            <p>
+                              <strong>Emma Schroder - Content Developer</strong>
+                            </p>
+                            <blockquote class="quote">
+                              <p class="clear-margin">Joey and I worked together on very detailed project with a tight deadline. Even though he was given almost no time to ramp up, Joey knocked out all of his tasks quickly.   Joey is also a very clear communicator. When you&#x27;re working together, you&#x27;ll never wonder about the status of a project. Overall, Joey is a good guy to have on your team.</p>
+                            </blockquote>
+                          </li>
+                          <li class="card card-nested">
+                            <p>
+                              <strong>Alex Kravets - CTO, Founder</strong>
+                            </p>
+                            <blockquote class="quote">
+                              <p class="clear-margin">Joseph did a huge amount of anything-that-needs-to-be-done work for Alelo, including researching &amp; re-using open source media assets off the internet, doing UX design for a proprietary Alelo product, etc.   Joseph has shown himself to be a great addition to the Alelo Production Support &amp; Product Design teams. He is competent, friendly and easy to work with.</p>
+                            </blockquote>
+                          </li>
+                          <li class="card card-nested">
+                            <p>
+                              <strong>Deeba Yavrom</strong>
+                            </p>
+                            <blockquote class="quote">
+                              <p class="clear-margin">Having Joey as an employee was a great benefit to me and my team. Joey is a dedicated worker who excelled in his reliability and tireless work ethic, he has an extremely in depth knowledge of photography as a craft, and was always a strong presence to our staff, providing valuable comments, recommendations and critiques to the photographers.</p>
+                            </blockquote>
+                          </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/tooltip.js"></script>
+  </body>
 </html>

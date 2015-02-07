@@ -1,6 +1,6 @@
 task :html do
   Dir.glob("*.json") { |file| 
     filename = File.basename(file, ".json")
-    sh "resume export #{filename}.html"
+    sh "resume export #{filename}.html --theme elegant"
     }
 end

@@ -6,7 +6,7 @@
     "email": "joekunin@gmail.com",
     "phone": "(818) 457-1456",
     "website": "www.joekunin.com",
-    "summary": "Facinated by technology, the processes we use to build it, and the people that use it. Striving for efficiency, progress, beauty, and deeper understanding",
+    "summary": "Fascinated by technology, the processes we use to build it, and the people that use it. Striving for efficiency, progress, beauty, and deeper understanding. Interested in automation, optimization, craftsmanship, and evolution.",
     "location": {
       "address": "",
       "postalCode": "OR 97217",
@@ -103,26 +103,7 @@
     }
   ],
   "publications": [],
-  "skills": [
-    {
-      "name": "Web Development",
-      "level": "Master",
-      "keywords": [
-        "HTML",
-        "CSS",
-        "Javascript"
-      ]
-    },
-    {
-      "name": "Compression",
-      "level": "Master",
-      "keywords": [
-        "Mpeg",
-        "MP4",
-        "GIF"
-      ]
-    }
-  ],
+  "skills": [],
   "languages": [
     {
       "language": "English",
@@ -137,12 +118,7 @@
       "fluency": "Intermediate"
     }
   ],
-  "interests": [
-    {
-      "name": "Wildlife",
-      "keywords": []
-    }
-  ],
+  "interests": [],
   "references": [
     {
       "name": "Izett Barnett Jr. CPA - CFO at Alelo",
@@ -155,6 +131,10 @@
     {
       "name": "Alex Kravets - CTO, Founder",
       "reference": "Joseph did a huge amount of anything-that-needs-to-be-done work for Alelo, including researching & re-using open source media assets off the internet, doing UX design for a proprietary Alelo product, etc.   Joseph has shown himself to be a great addition to the Alelo Production Support & Product Design teams. He is competent, friendly and easy to work with."
+    },
+    {
+      "name": "Deeba Yavrom",
+      "reference": "Having Joey as an employee was a great benefit to me and my team. Joey is a dedicated worker who excelled in his reliability and tireless work ethic, he has an extremely in depth knowledge of photography as a craft, and was always a strong presence to our staff, providing valuable comments, recommendations and critiques to the photographers."
     }
   ]
 }
