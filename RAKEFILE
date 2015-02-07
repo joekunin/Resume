@@ -5,17 +5,15 @@ task :export do
      puts "Exporting HTML"
      sh "resume export #{filename}.html --theme elegant"
 
-     puts "exporting PDF"
-     sh "resume export #{filename}.pdf"
-
      puts "Exporting Markdown"
      sh "node tomarkdown.js"
     }
 
     Dir.glob('*.{pdf,md,html}') {|file|
         filename = File.basename(file)
-
-        sh "mv #{filename} export/"
+        if filename != "README.md"
+            sh "mv #{filename} export/"
+        end
     }
 end
 

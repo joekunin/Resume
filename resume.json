@@ -33,9 +33,9 @@
       "position": "Developer / Designer",
       "website": "http://joekunin.com",
       "startDate": "2012-03-01",
-      "summary": "Freelance web design and development, server administration, brand design and management, consultation, and photo editing. My time was spent working closely with my clients to materialize their needs, while including my own expertise and guidance to increase the value of the finished product, for both client and their customers. Concurrently, I devoted myself to self-study of more advanced development topics and languages, including Git, Ruby, Rails, Sinatra, Javascript, API design, pragmatic programming principles, refactoring, MVC, MVVM, responsive design, and web development best practices.",
+      "summary": "Freelance web design and development, server administration, brand design and management, consultation, and photo editing. My time was spent working closely with my clients to materialize their needs, while including my own expertise and guidance to increase the value of the finished product for both the client and their customers. Concurrently, I devoted myself to self-study of more advanced development topics and languages, including Git, Ruby, Rails, Sinatra, Javascript, API design, pragmatic programming principles, refactoring, MVC, MVVM, OOP, responsive design, and web development best practices.",
       "highlights": [
-        "Led and executed the re-design and development of award-winning Portland men's grooming www.hairmgrooming.com, women's salon www.hairwsalon.com, and unisex salon www.hairm-w.com.",
+        "Led and executed the redesign and development of award-winning Portland men's (www.hairmgrooming.com), women's (www.hairwsalon.com), and unisex salons (www.hairm-w.com).",
         "Self-led Treehouse course on Javascript, Ruby, Rails, Git, HTML, CSS and programming concepts."
       ]
     },
@@ -67,7 +67,7 @@
       "endDate": "2009-06-15",
       "summary": "Intern at the premier travel photography agency in Europe and the United Kingdom. Interacted with thousands of photos in every step of the organizing and cataloging process, including editing, filing, distribution, rights management, and invoicing.  Observed strict submission guidelines, keywording practices, and technical requirements. I continually Interacted with clients such as Condé Nast, Getty Images, Rough Guides, and nearly every major UK–based news publication.",
       "highlights": [
-        "Increased the productivity and output of the cataloging process by devising a series of scripts to automate many tedious spreadsheet tasks, saving about a weeks worth of work per task."
+        "Increased the productivity and output of the cataloging process by devising a series of scripts to automate many tedious spreadsheet tasks, saving about a week's worth of work per task."
       ]
     },
     {
@@ -76,9 +76,9 @@
       "website": "http://arts.ucdavis.edu/theatre-dance",
       "startDate": "2007-12-01",
       "endDate": "2009-06-15",
-      "summary": "Responsible for capturing, marketing, and archiving publicity photos of all shows and events, digitally editing large sets of photos under deadline. Balanced creating images that fit my own photographic vision with the publicity director’s technical requirements. Continuously challenged my photographic creativity to present a wide variety of material in an intriguing way. Other duties included shoot coordination, scheduling, collaboration with art department, and creation of “Best of” lists for publicity director and publishers.",
+      "summary": "Responsible for capturing, marketing, and archiving publicity photos of all shows and events and digitally editing large sets of photos under deadline. Balanced creating images that fit my own photographic vision with the publicity director’s technical requirements. Continuously challenged my photographic creativity to present a wide variety of material in an intriguing way. Other duties included shoot coordination, scheduling, collaboration with art department, and creation of “Best of” lists for publicity director and publishers.",
       "highlights": [
-        "first photographer in the department's new marketing initiative, that culminated in substantially increased viewership and audience attendence. Directly part of each marketing campaign."
+        "first photographer in the department's new marketing initiative, that culminated in substantially increased viewership and audience attendance. Directly part of each marketing campaign."
       ]
     },
     {
@@ -95,11 +95,11 @@
   "education": [
     {
       "institution": "University of California Davis",
-      "area": "International Relations, German, Russian",
-      "studyType": "Bachelor",
+      "area": "International Relations, German, and Russian",
+      "studyType": "– Bachelor",
       "startDate": "2005-09-01",
       "endDate": "2009-05-01",
-      "gpa": "3.7",
+      "gpa": "",
       "courses": []
     }
   ],
@@ -112,7 +112,40 @@
     }
   ],
   "publications": [],
-  "skills": [],
+  "skills": [
+    {
+      "name": "Technical",
+      "level": "",
+      "keywords": [
+        "Ruby / Rails / Sinatra / Grape / Volt",
+        "HTML5 / HAML / CSS3 / SASS/ JS / jQuery",
+        "Responsive Design",
+        "MVC / MVVM / OOP",
+        "PHP",
+        "Wordpress / Concrete5 / Koken",
+        "Version Control / Grunt / Gulp / Vagrant / Rake"
+      ]
+    },
+    {
+      "name": "Design",
+      "level": "",
+      "keywords": [
+        "Typography",
+        "Composition",
+        "Brand unity",
+        "Color Theory"
+      ]
+    },
+    {
+      "name": "Communication and Methodology",
+      "level": "",
+      "keywords": [
+        "Collaboration / Individual initiative",
+        "Remote teamwork",
+        "Excellent ability to research solutions and gain deeper understanding of problems in their larger context"
+      ]
+    }
+  ],
   "languages": [
     {
       "language": "English",
@@ -146,7 +179,7 @@
       "keywords": [
         "Southeast Asia",
         "Western United States",
-        "Backpacking",
+        "Backpacking / Camping",
         "No-plan travel",
         "Digital Nomadism"
       ]
@@ -159,6 +192,33 @@
         "Guitar",
         "Accordion"
       ]
+    },
+    {
+      "name": "Art",
+      "keywords": [
+        "Watercolor / Inks",
+        "Digital illustration and painting",
+        "Letterpress"
+      ]
+    },
+    {
+      "name": "Technology and Society",
+      "keywords": [
+        "Accessibility",
+        "Cryptocurrency",
+        "Decentralization and democratization of information and education",
+        "Enabling and empowering the under-represented",
+        "Effects of digital technology on human evolution"
+      ]
+    },
+    {
+      "name": "Habits and the mind",
+      "keywords": [
+        "Mindfulness",
+        "Productivity",
+        "Minimalism",
+        "DIY"
+      ]
     }
   ],
   "references": [
@@ -168,14 +228,14 @@
     },
     {
       "name": "Alex Kravets - CTO, Founder",
-      "reference": "Joseph did a huge amount of anything-that-needs-to-be-done work for Alelo, including researching & re-using open source media assets off the internet, doing UX design for a proprietary Alelo product, etc.   Joseph has shown himself to be a great addition to the Alelo Production Support & Product Design teams. He is competent, friendly and easy to work with."
+      "reference": "Joseph did a huge amount of anything-that-needs-to-be-done work for Alelo, including researching & reusing open source media assets off the internet, doing UX design for a proprietary Alelo product, etc.   Joseph has shown himself to be a great addition to the Alelo Production Support & Product Design teams. He is competent, friendly and easy to work with."
     },
     {
       "name": "Emma Schroder - Content Developer",
       "reference": "Joey and I worked together on very detailed project with a tight deadline. Even though he was given almost no time to ramp up, Joey knocked out all of his tasks quickly.   Joey is also a very clear communicator. When you're working together, you'll never wonder about the status of a project. Overall, Joey is a good guy to have on your team."
     },
     {
-      "name": "Deeba Yavrom",
+      "name": "Deeba Yavrom - Photo Editor",
       "reference": "Having Joey as an employee was a great benefit to me and my team. Joey is a dedicated worker who excelled in his reliability and tireless work ethic, he has an extremely in depth knowledge of photography as a craft, and was always a strong presence to our staff, providing valuable comments, recommendations and critiques to the photographers."
     }
   ]
