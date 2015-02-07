@@ -1,6 +1,31 @@
+task :export do
+    Dir.glob("*.json") { |file|  
+     filename = File.basename(file, ".json")
+
+     puts "Exporting HTML"
+     sh "resume export #{filename}.html --theme elegant"
+
+     puts "exporting PDF"
+     sh "resume export #{filename}.pdf"
+
+     puts "Exporting Markdown"
+     sh "node tomarkdown.js"
+    }
+
+    Dir.glob('*.{pdf,md,html}') {|file|
+        filename = File.basename(file)
+
+        sh "mv #{filename} export/"
+    }
+end
+
 task :html do
   Dir.glob("*.json") { |file| 
     filename = File.basename(file, ".json")
     sh "resume export #{filename}.html --theme elegant"
     }
+end
+
+task :md do
+    sh "node tomarkdown.js"
 end
