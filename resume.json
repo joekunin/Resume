@@ -5,20 +5,20 @@
     "picture": "http://joekunin.com/me.jpg",
     "email": "joekunin@gmail.com",
     "phone": "(818) 457-1456",
-    "website": "http://joekunin.com",
+    "website": "www.joekunin.com",
     "summary": "Facinated by technology, the processes we use to build it, and the people that use it. Striving for efficiency, progress, beauty, and deeper understanding",
     "location": {
       "address": "",
-      "postalCode": "",
-      "city": "Portland | Los Angeles",
+      "postalCode": "OR 97217",
+      "city": "Portland",
       "countryCode": "US",
-      "region": "California, Oregon, West Coast"
+      "region": "Oregon"
     },
     "profiles": [
       {
         "network": "GitHub",
         "username": "joekunin",
-        "url": "https://github.com/joekunin"
+        "url": "github.com/joekunin"
       },
       {
         "network": "LinkedIn",
@@ -26,66 +26,83 @@
         "url": "www.linkedin.com/in/joekunin/"
       }
     ]
-
   },
   "work": [
     {
-      "company": "Joe Kunin Development",
-      "position": "Developer",
-      "website": "http://www.joekunin.com",
-      "startDate": "2011-01-01",
+      "company": "Joe Kunin Development & Design",
+      "position": "Developer / Designer",
+      "website": "http://joekunin.com",
+      "startDate": "2012-03-01",
       "summary": "",
-      "highlights": [
-        "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
-        "Successfully won Techcrunch Disrupt",
-        "Optimized an algorithm that holds the current world record for Weisman Scores"
-      ]
-    }
-  ],
-  "volunteer": [
+      "highlights": []
+    },
     {
-      "organization": "CoderDojo",
-      "position": "Teacher",
-      "website": "http://coderdojo.com/",
-      "startDate": "2012-01-01",
-      "endDate": "2013-01-01",
-      "summary": "Global movement of free coding clubs for young people.",
-      "highlights": [
-        "Awarded 'Teacher of the Month'"
-      ]
+      "company": "Alelo TLT, LLC",
+      "position": "Production Support Specialist",
+      "website": "http://www.alelo.com/",
+      "startDate": "2010-10-01",
+      "endDate": "2011-06-01",
+      "summary": "This role required considerable flexibility and a superior ability to adapt, in order to efficiently address shifting requirements, deadlines, product and company needs. Pressure from strict deadlines and budgetary requirements necessitated an efficient, productive, and self-managing work ethic as well as daily collaboration with project and product managers, department leads, and colleagues to establish and maintain an effective workflow. My Duties included effectively providing support to a variety of departments during all stages of production, quality assurance, bug tracking using a dedicated system, content development with an extensive research and revision process, graphic design, and user experience work for both client and internal applications. During my time at Alelo, I was able to successfully manage a full workload of simultaneous projects with different clients and requirements, and collaborate effectively with my colleagues to successfully complete a rich, technologically sophisticated, multimedia–driven course that was to become a flagship product.",
+      "highlights": []
+    },
+    {
+      "company": "Onsolution",
+      "position": "Network Administrator Assistant",
+      "website": "",
+      "startDate": "2000-06-01",
+      "endDate": "2010-10-01",
+      "summary": "I assisted with hardware repair, troubleshooting and installation of vital software, configuration of new systems, maintenance and updating of older systems, and networking. Included a high proportion of customer service. Assisted and tutored users with basic and advanced computer usage as well as software dilemmas. Extensive use of Windows and Mac systems.",
+      "highlights": []
+    },
+    {
+      "company": "Axiom Photographic",
+      "position": "Photography Library Intern",
+      "website": "http://www.axiomphotographic.com/",
+      "startDate": "2009-03-03",
+      "endDate": "2009-06-15",
+      "summary": "Intern at the premier travel photography agency in Europe and the United Kingdom. Interacted with thousands of photos in every step of the organizing and cataloging process, including editing, filing, distribution, rights management, and invoicing. increased the productivity and output of the cataloging process by devising a series of scripts to automate many tedious tasks. Observed strict submission guidelines, keywording practices, and technical requirements. I continually Interacted with clients such as Condé Nast, Getty Images, Rough Guides, and nearly every major UK–based news publication.",
+      "highlights": []
+    },
+    {
+      "company": "UC Davis Dept. of Theater and Dance",
+      "position": "Head Publicity Photographer",
+      "website": "http://arts.ucdavis.edu/theatre-dance",
+      "startDate": "2007-12-01",
+      "endDate": "2009-06-15",
+      "summary": "Charged with capturing publicity photos of all shows and events for marketing and archival purposes, digitally editing large sets of photos, and creating images that fit my own photographic vision, along with the publicity director’s technical requirements. Continuously challenged my photographic creativity to present a wide variety of material in an intriguing way. Other duties included shoot coordination, scheduling, collaboration with art department, and creation of “Best of” lists for publicity director and publishers.",
+      "highlights": []
+    },
+    {
+      "company": "The California Aggie",
+      "position": "Staff Photographer",
+      "website": "",
+      "startDate": "2007-01-15",
+      "endDate": "2009-06-15",
+      "summary": "Staff photographer for a newspaper with a circulation of 13,000 people. Fast reaction speeds, resourcefulness, and adaptability were essential for successful completion of assignments by their deadlines. Other tasks included event organization, equipment and staff management, editing of images, and workflow optimization.",
+      "highlights": []
     }
   ],
+  "volunteer": [],
   "education": [
     {
-      "institution": "University of Oklahoma",
-      "area": "Information Technology",
+      "institution": "University of California Davis",
+      "area": "International Relations, German, Russian",
       "studyType": "Bachelor",
-      "startDate": "2011-06-01",
-      "endDate": "2014-01-01",
-      "gpa": "4.0",
-      "courses": [
-        "DB1101 - Basic SQL",
-        "CS2011 - Java Introduction"
-      ]
+      "startDate": "2005-09-01",
+      "endDate": "2009-05-01",
+      "gpa": "3.7",
+      "courses": []
     }
   ],
   "awards": [
     {
-      "title": "",
-      "date": "2011-06-01",
-      "awarder": "",
-      "summary": ""
+      "title": "Deans' Honor List recipient",
+      "date": "2009-05-01",
+      "awarder": "University of California",
+      "summary": "Finished with maximum units and ranked among top 16% of class."
     }
   ],
-  "publications": [
-    {
-      "name": "",
-      "publisher": "",
-      "releaseDate": "",
-      "website": "",
-      "summary": ""
-    }
-  ],
+  "publications": [],
   "skills": [
     {
       "name": "Web Development",
@@ -110,21 +127,34 @@
     {
       "language": "English",
       "fluency": "Native speaker"
+    },
+    {
+      "language": "Russian",
+      "fluency": "Native Speaker"
+    },
+    {
+      "language": "German",
+      "fluency": "Intermediate"
     }
   ],
   "interests": [
     {
-      "name": "",
-      "keywords": [
-        "",
-        ""
-      ]
+      "name": "Wildlife",
+      "keywords": []
     }
   ],
   "references": [
     {
-      "name": "",
-      "reference": ""
+      "name": "Izett Barnett Jr. CPA - CFO at Alelo",
+      "reference": "Joe has an interdisciplinary background that he leveraged to communicate effectively across the tech, media and content departments. He has inquisitive nature that lead him to find faster, more efficient ways to finish his work and has the ability to adapt to quickly and learn new skills in a fast-paced, dynamic work environment."
+    },
+    {
+      "name": "Emma Schroder - Content Developer",
+      "reference": "Joey and I worked together on very detailed project with a tight deadline. Even though he was given almost no time to ramp up, Joey knocked out all of his tasks quickly.   Joey is also a very clear communicator. When you're working together, you'll never wonder about the status of a project. Overall, Joey is a good guy to have on your team."
+    },
+    {
+      "name": "Alex Kravets - CTO, Founder",
+      "reference": "Joseph did a huge amount of anything-that-needs-to-be-done work for Alelo, including researching & re-using open source media assets off the internet, doing UX design for a proprietary Alelo product, etc.   Joseph has shown himself to be a great addition to the Alelo Production Support & Product Design teams. He is competent, friendly and easy to work with."
     }
   ]
 }
