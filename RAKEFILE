@@ -24,6 +24,13 @@ task :html do
     }
 end
 
+task :print do
+    Dir.glob("*.json") { |file| 
+        filename = File.basename(file, ".json")
+        sh "resume export #{filename}.html --theme paper"
+    }
+end
+
 task :md do
     sh "node tomarkdown.js"
 end
